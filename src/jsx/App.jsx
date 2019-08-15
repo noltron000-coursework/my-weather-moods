@@ -1,5 +1,5 @@
-import React from 'react';
-import '../css/App.css';
+import React from 'react'
+import '../css/App.css'
 import Forecast from './Forecast.jsx'
 import Mood from './Mood.jsx'
 
@@ -12,7 +12,7 @@ function App() {
 			<Forecast />
 			<Mood />
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App

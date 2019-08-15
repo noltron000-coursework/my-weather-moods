@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function Mood() {
 	return (
@@ -11,7 +11,7 @@ function Mood() {
 			{/* eslint-disable-next-line */}
 			<a href='./'><span role="img">😭</span></a>
 		</div>
-	);
+	)
 }
 
-export default Mood;
+export default Mood
