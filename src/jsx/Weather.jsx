@@ -37,25 +37,30 @@ class Forecast extends Component {
 	}
 
 	render() {
-		console.log('weather data:', this.props.weatherData)
+		// declare contents
+		let contents
+		// no data exists yet
 		if (this.props.weatherData === null) {
-			return(
-				<div className="weather">
+			contents = (
+				<figure className="weather">
 					<h2>Today's Weather</h2>
 					<p><em>...Loading...</em></p>
-				</div>
+				</figure>
 			)
+		// data exists
 		} else {
-			return (
-				<div className="weather">
+			contents = (
+				<figure className="weather">
 					<h2>Today's Weather</h2>
-					<p>SEE:</p>
-					<p>{this.props.weatherData.name}</p>
-					<p>{this.props.weatherData.main.temp}</p>
 					<p>{this.props.weatherData.weather[0].description}</p>
-				</div>
+					<h3>Location</h3>
+					<p>{this.props.weatherData.name}</p>
+					<h3>Temperature</h3>
+					<p>{this.props.weatherData.main.temp}</p>
+				</figure>
 			)
 		}
+		return contents
 	}
 }
 
