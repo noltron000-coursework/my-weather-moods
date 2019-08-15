@@ -13,8 +13,8 @@ class MoodButton extends Component {
 		const emoji = mood_emojis[this.props.mood]
 
 		return (
-			<button className='mood'>
-				<span role='img' aria-label='mood'>{emoji}</span>
+			<button>
+				<span role='img'>{emoji}</span>
 			</button>
 		)
 	}

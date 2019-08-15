@@ -12,7 +12,6 @@ class App extends Component {
 		
 		this.state = {
 			weatherData: null,
-			mood: null,
 		}
 	}
 	
@@ -27,16 +26,22 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				{/* header bar */}
 				<header>
 					<h1>My Weather Mood</h1>
 				</header>
+
+				{/* weather data */}
 				<Forecast 
 					weatherData = {this.state.weatherData}
 					setWeather = {this.setWeather}
 				/>
+
+				{/* mood selection */}
 				<Mood
 					setMood = {this.setMood}
 				/>
+
 			</div>
 		)
 	}
