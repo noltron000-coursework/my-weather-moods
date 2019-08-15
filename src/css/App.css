@@ -1,5 +1,7 @@
-html {
+html, body {
 	font-size: 18px;
+	width: 100vw;
+	height: 100vh;
 }
 
 header {
@@ -32,6 +34,10 @@ p {
 	margin-bottom: 0.5em;
 }
 
+a {
+	color: #61dafb;
+}
+
 .Mood {
 	align-items: center;
 	justify-content: center;
@@ -57,7 +63,4 @@ p {
 
 .Mood .ButtonGroup button:hover {
 	font-size: calc(10vmin);
-}
-.App-link {
-	color: #61dafb;
 }
