@@ -56,7 +56,7 @@ class Forecast extends Component {
 					<h3>Location</h3>
 					<p>{this.props.weatherData.name}</p>
 					<h3>Temperature</h3>
-					<p>{this.props.weatherData.main.temp}</p>
+					<p>{this.props.weatherData.main.temp}&deg;F</p>
 				</figure>
 			)
 		}
