@@ -1,17 +1,10 @@
 import React, {Component} from 'react'
 
 class Forecast extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			weather: null,
-			location: null
-		}
-	}
-
 	getWeather() {
 		// create helper variables
-		const secret = process.env.WEATHER_API
+		const secret = process.env.REACT_APP_WEATHER_API
+		// const secret =
 		const units = 'Imperial'
 		const city = 'San Francisco'
 		// construct url
@@ -22,6 +15,7 @@ class Forecast extends Component {
 
 		// ensure secret works - (DELETE ME LATER)
 		console.warn(secret)
+		console.warn(url)
 
 		// hit the url
 		fetch(url)
@@ -29,7 +23,8 @@ class Forecast extends Component {
 			return res.json()
 		})
 		.then((json) => {
-			return json
+			// we have the json!
+			this.props.setWeather(json)
 		})
 		.catch((err) => {
 			console.error(err.message)
@@ -42,11 +37,25 @@ class Forecast extends Component {
 	}
 
 	render() {
-		return (
-			<div className="Forecast">
-				<h2>Today's Forecast</h2>
-			</div>
-		)
+		console.log('weather data:', this.props.weatherData)
+		if (this.props.weatherData === null) {
+			return(
+				<div className="weather">
+					<h2>Today's Weather</h2>
+					<p><em>...Loading...</em></p>
+				</div>
+			)
+		} else {
+			return (
+				<div className="weather">
+					<h2>Today's Weather</h2>
+					<p>SEE:</p>
+					<p>{this.props.weatherData.name}</p>
+					<p>{this.props.weatherData.main.temp}</p>
+					<p>{this.props.weatherData.weather[0].description}</p>
+				</div>
+			)
+		}
 	}
 }
 
