@@ -3,8 +3,8 @@ import React, {Component} from 'react'
 class Forecast extends Component {
 	getWeather() {
 		// create helper variables
-		const secret = process.env.REACT_APP_WEATHER_API
-		// const secret =
+		// const secret = process.env.REACT_APP_WEATHER_API
+		const secret = '52da3f67c24e2457198649ad9c443eb9'
 		const units = 'Imperial'
 		const city = 'San Francisco'
 		// construct url
